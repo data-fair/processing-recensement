@@ -1,0 +1,33 @@
+{
+  "name": "@data-fair/processing-recensement",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/data-fair/processing-recensement.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/data-fair/processing-recensement/issues"
+  },
+  "homepage": "https://github.com/data-fair/processing-recensement#readme",
+  "devDependencies": {
+    "@data-fair/processings-test-utils": "^0.5.2",
+    "config": "^3.3.9",
+    "mocha": "^10.2.0",
+    "standard": "^17.0.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "json-2-csv": "^4.0.0",
+    "path": "^0.12.7"
+  }
+}
