@@ -1,0 +1,41 @@
+[
+    {
+      "key": "code",
+      "type": "integer",
+      "title": "Code commune",
+      "description": "",
+      "x-refersTo": "http://rdf.insee.fr/def/geo#codeCommune"
+    },
+    {
+        "key" :"population_municipale",
+        "type": "integer",
+        "title": "Population",
+        "description": "Population municipale de la commune"
+
+    },
+    {
+        "key" :"moins_15",
+        "type": "integer",
+        "title": "Moins de 15 ans",
+        "description": "Nombre de personnes recensées de moins de 15 ans dans la commune, les communes de moins de 2000 habitants ne possède pas cette donnée"
+    },
+    {
+        "key" :"entre_15_24",
+        "type": "integer",
+        "title": "15 à 24 ans",
+        "description": "Nombre de personnes recensées de 15 à 24 ans dans la commune, les communes de moins de 2000 habitants ne possède pas cette donnée"
+    },
+    {
+        "key" :"entre_25_54",
+        "type": "integer",
+        "title": "25 à 54 ans",
+        "description": "Nombre de personnes recensées de 25 à 54 ans dans la commune, les communes de moins de 2000 habitants ne possède pas cette donnée"
+    },
+    {
+        "key":"plus_55",
+        "type": "integer",
+        "title": "55 ans et plus",
+        "description": "Nombre de personnes recensées de 55 ans et plus dans la commune, les communes de moins de 2000 habitants ne possède pas cette donnée"
+    }
+
+]

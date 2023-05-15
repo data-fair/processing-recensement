@@ -11,7 +11,10 @@ describe('test', function () {
       },
       processingConfig: {
         filter: '56',
-        apiKey: config.inseeAPIKey
+        datasetMode: 'create',
+        dataset: { title: 'recensement 56' },
+        apiKey: config.inseeAPIKey,
+        clearFile: false
 
       },
       tmpDir: 'data'
