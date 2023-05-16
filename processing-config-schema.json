@@ -53,6 +53,11 @@
               "type": "string",
               "title": "Clé d'API insee",
               "description": "Clé de l'API Métadonnées api.insee.fr/catalogue (Clef du consommateur + ':' + Secret du consommateur)"
+            },
+            "clearFiles": {
+              "title": "supprimer les fichiers téléchargés",
+              "type": "boolean",
+              "default": true
             }
         }
     }]
