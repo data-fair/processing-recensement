@@ -65,6 +65,7 @@ exports.run = async ({ pluginConfig, processingConfig, tmpDir, axios, log, patch
   }
 
   await upload(processingConfig, tmpDir, axios, log, patchConfig)
+
   if (processingConfig.clearFiles) {
     await fs.emptyDir(tmpDir)
   }
