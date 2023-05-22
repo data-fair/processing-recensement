@@ -10,9 +10,11 @@ describe('test', function () {
       pluginConfig: {
       },
       processingConfig: {
-        filter: '56',
+        filter: '51',
+        year: '2018-2007-2019',
+        datasetRP: 'GEO2022RP2019-GEO2021RP2018',
         datasetMode: 'create',
-        dataset: { title: 'recensement 56' },
+        dataset: { title: 'recensement 51' },
         apiKey: config.inseeAPIKey,
         clearFile: false
 
