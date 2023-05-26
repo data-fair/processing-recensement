@@ -15,7 +15,7 @@ describe('test', function () {
         datasetRP: 'GEO2022RP2019-GEO2021RP2018',
         datasetMode: 'create',
         dataset: { title: 'recensement 51' },
-        apiAccessToken: '801cea65-275f-3b00-86c0-bcd6b78f964f',
+        apiAccessToken: 'token Insee : https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/application.jag?name=DefaultApplication',
         clearFile: false
       },
       tmpDir: 'data'
