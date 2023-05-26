@@ -15,9 +15,8 @@ describe('test', function () {
         datasetRP: 'GEO2022RP2019-GEO2021RP2018',
         datasetMode: 'create',
         dataset: { title: 'recensement 51' },
-        apiKey: config.inseeAPIKey,
+        apiAccessToken: '801cea65-275f-3b00-86c0-bcd6b78f964f',
         clearFile: false
-
       },
       tmpDir: 'data'
     }, config, false)

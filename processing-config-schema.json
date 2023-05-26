@@ -57,13 +57,13 @@
             "datasetRP":{
               "type": "string",
               "title": "Jeu de données de recensement",
-              "description": "Ce jeu de données permet pour les années non renseignés dans le pluggin  (année > 2019) de récupérer les données de recensement de ces années. Peut comme pour les années être séparé par un - pour contenir plusieurs jeux, cette information est récupérable dans la documentation de l'api (https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/item-info.jag?name=DonneesLocales&version=V0.1&provider=insee#!/default/getDonnees) dans le fichier Documentation RP"
+              "description": "Ce jeu de données permet pour les années non renseignés dans le plugin  (année > 2019) de récupérer les données de recensement de ces années. Peut comme pour les années être séparé par un - pour contenir plusieurs jeux, cette information est récupérable dans la documentation de l'api (https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/item-info.jag?name=DonneesLocales&version=V0.1&provider=insee#!/default/getDonnees) dans le fichier Documentation RP"
           },
-            "apiKey":{
-              "type": "string",
-              "title": "Clé d'API insee",
-              "description": "Clé de l'API Métadonnées api.insee.fr/catalogue (Clef du consommateur + ':' + Secret du consommateur)"
-            },
+          "apiAccessToken": {
+            "type": "string",
+            "title": "Jeton d'accès aux API de l'Insee",
+            "x-display": "password"
+          },
             "clearFiles": {
               "title": "supprimer les fichiers téléchargés",
               "type": "boolean",
