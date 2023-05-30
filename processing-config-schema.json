@@ -11,6 +11,7 @@
           "datasetMode": { "type": "string", "const": "create", "title": "Action" },
           "dataset": {
             "type": "object",
+            "required": ["title"],
             "properties": {
               "title": {"type": "string", "title": "Titre (laissez vide pour utiliser le nom de fichier téléchargé)"}
             }
