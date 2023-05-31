@@ -5,17 +5,17 @@ const rencensement = require('../')
 
 describe('test', function () {
   it('try', async function () {
-    this.timeout(10000000)
+    this.timeout(100000000000)
     const context = testUtils.context({
       pluginConfig: {
       },
       processingConfig: {
-        filter: '51',
-        year: '2018-2007-2019',
-        datasetRP: 'GEO2022RP2019-GEO2021RP2018',
+        filter: '49',
+        // year: '',
+        // datasetRP: '',
         datasetMode: 'create',
         dataset: { title: 'recensement 51' },
-        apiAccessToken: 'token Insee : https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/application.jag?name=DefaultApplication',
+        apiAccessToken: '56318f74-0610-37da-850c-3c501c9ffba5',
         clearFile: false
       },
       tmpDir: 'data'
