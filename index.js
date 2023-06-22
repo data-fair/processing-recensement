@@ -5,7 +5,7 @@ const upload = require('./lib/upload')
 
 exports.run = async ({ pluginConfig, processingConfig, tmpDir, axios, log, patchConfig }) => {
   await process(processingConfig, axios, tmpDir, log)
-  if (fs.existsSync(path.join(tmpDir, 'data.csv'))) {
+  if (fs.existsSync(path.join(tmpDir, 'recensement.csv'))) {
     if (processingConfig.datasetMode === 'update' && !processingConfig.forceUpdate) {
       try {
         await log.step('Vérification de l\'en-tête du jeu de données')
@@ -18,7 +18,7 @@ exports.run = async ({ pluginConfig, processingConfig, tmpDir, axios, log, patch
         let head
 
         await new Promise((resolve) => {
-          headFile.once('data', (chunk) => {
+          headFile.once('recensement', (chunk) => {
             head = chunk.slice(0, chunk.indexOf('\n'))
             resolve()
           })
@@ -26,7 +26,6 @@ exports.run = async ({ pluginConfig, processingConfig, tmpDir, axios, log, patch
 
         if (!head.includes(schemaActuelDataset.slice(0, head.length - 1))) {
           await log.info('Le jeu de données ne possède pas la même en-tête que le fichier téléchargé. Activez la mise à jour forcée pour mettre à jour')
-          throw new Error('En-têtes différentes entre les fichiers')
         } else {
           await log.info('En-têtes identiques, mise à jour')
         }

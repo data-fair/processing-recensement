@@ -52,24 +52,20 @@
             },
             "year":{
                 "type": "string",
-                "title": "Année(s) à traiter",
+                "title": "Année(s) à traiter (2006-2019)",
                 "description": "L'année doit être au format 4 chiffres (ex: 2019) si plusieurs années, séparez les par un '-' (ex: 2018-2029), si aucune année n'est précisée, toutes les années disponibles seront traitées"
             },
-            "datasetRP":{
+            "apiAccessToken": {
               "type": "string",
-              "title": "Jeu de données de recensement",
-              "description": "Ce jeu de données permet pour les années non renseignés dans le plugin  (année > 2019) de récupérer les données de recensement de ces années. Peut comme pour les années être séparé par un - pour contenir plusieurs jeux, cette information est récupérable dans la documentation de l'api (https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/item-info.jag?name=DonneesLocales&version=V0.1&provider=insee#!/default/getDonnees) dans le fichier Documentation RP"
-          },
-          "apiAccessToken": {
-            "type": "string",
-            "title": "Jeton d'accès aux API de l'Insee",
-            "x-display": "password"
-          },
-            "clearFiles": {
-              "title": "supprimer les fichiers téléchargés",
-              "type": "boolean",
-              "default": true
-            }
-        }
+              "title": "Jeton d'accès aux API de l'Insee ",
+              "description": "Le jeton d'accès aux API de l'Insee est disponible sur votre espace, pour ce traitement il faudra créer un nouveau jeton avec une durée plus longue (environ 1 mois dans le cas d'un traitement pour toutes les années)",
+              "x-display": "password"
+            },
+              "clearFiles": {
+                "title": "supprimer les fichiers téléchargés",
+                "type": "boolean",
+                "default": true
+              }
+          }
     }]
 }

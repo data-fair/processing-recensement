@@ -10,12 +10,11 @@ describe('test', function () {
       pluginConfig: {
       },
       processingConfig: {
-        filter: '49',
-        // year: '',
-        // datasetRP: '',
+        // filter: '49',
+        year: '2019-2016',
         datasetMode: 'create',
-        dataset: { title: 'recensement 51' },
-        apiAccessToken: '56318f74-0610-37da-850c-3c501c9ffba5',
+        dataset: { title: 'recensement 2019' },
+        apiAccessToken: '5d461306-56f8-3781-ae71-6fa99cfb6fcf',
         clearFile: false
       },
       tmpDir: 'data'
