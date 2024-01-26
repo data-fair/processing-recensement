@@ -1,5 +1,6 @@
 {
     "type": "object",
+    "required": ["apiAccessToken"],
     "properties": {
       "apiAccessToken": {
         "type": "string",

@@ -10,7 +10,7 @@ describe('test', function () {
     // Creation d'un dataset
     // const context = testUtils.context({
     //   pluginConfig: {
-    //     apiTokenInsee: config.apiTokenInsee
+    //     apiAccessToken: config.apiAccessToken
     //   },
     //   processingConfig: {
     //     datasetMode: 'create',
@@ -28,7 +28,7 @@ describe('test', function () {
     // Mise à jour du dataset
     const context = testUtils.context({
       pluginConfig: {
-        apiTokenInsee: config.apiTokenInsee
+        apiAccessToken: config.apiAccessToken
       },
       processingConfig: {
         datasetMode: 'update',
