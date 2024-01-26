@@ -1,24 +1,47 @@
 process.env.NODE_ENV = 'test'
 const config = require('config')
 const testUtils = require('@data-fair/processings-test-utils')
-const rencensement = require('../')
+const rencensementProcessing = require('../')
 
 describe('test', function () {
   it('try', async function () {
-    this.timeout(100000000000)
+    this.timeout(1000000)
+
+    // Creation d'un dataset
+    // const context = testUtils.context({
+    //   pluginConfig: {
+    //     apiTokenInsee: config.apiTokenInsee
+    //   },
+    //   processingConfig: {
+    //     datasetMode: 'create',
+    //     dataset: { title: 'Recensement Test' },
+    //     filter: {
+    //       codeType: 'code_departement',
+    //       code: '973'
+    //     },
+    //     years: '2006',
+    //     clearFile: true
+    //   },
+    //   tmpDir: 'data'
+    // }, config, false)
+
+    // Mise à jour du dataset
     const context = testUtils.context({
       pluginConfig: {
+        apiTokenInsee: config.apiTokenInsee
       },
       processingConfig: {
-        // filter: '49',
-        year: '2019-2016',
-        datasetMode: 'create',
-        dataset: { title: 'recensement 2019' },
-        apiAccessToken: '5d461306-56f8-3781-ae71-6fa99cfb6fcf',
+        datasetMode: 'update',
+        dataset: { title: 'Recensement Test', id: 're7rgz7bg-s9y5pqu12jself' },
+        filter: {
+          codeType: 'code_departement',
+          code: '974'
+        },
         clearFile: false
       },
       tmpDir: 'data'
     }, config, false)
-    await rencensement.run(context)
+
+    await rencensementProcessing.run(context)
   })
 })

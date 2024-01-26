@@ -1,71 +1,89 @@
 {
-    "type": "object",
-    "x-display": "tabs",
-    "required": ["datasetMode"],
-    "allOf": [{
-      "title": "Jeu de données",
-      "oneOf": [{
-        "title": "Créer un jeu de données",
-        "required": ["dataset"],
-        "properties": {
-          "datasetMode": { "type": "string", "const": "create", "title": "Action" },
-          "dataset": {
-            "type": "object",
-            "required": ["title"],
-            "properties": {
-              "title": {"type": "string", "title": "Titre (laissez vide pour utiliser le nom de fichier téléchargé)"}
-            }
+  "type": "object",
+  "x-display": "tabs",
+  "required": ["datasetMode"],
+  "allOf": [{
+    "title": "Jeu de données",
+    "oneOf": [{
+      "title": "Créer un jeu de données",
+      "required": ["dataset"],
+      "properties": {
+        "datasetMode": { "type": "string", "const": "create", "title": "Action" },
+        "dataset": {
+          "type": "object",
+          "required": ["title"],
+          "properties": {
+            "title": {"type": "string", "title": "Titre (laissez vide pour utiliser le nom de fichier téléchargé)"}
           }
         }
-      }, {
-        "title": "Mettre à jour un jeu de données (fichier)",
-        "required": ["dataset"],
-        "properties": {
-          "datasetMode": { "type": "string", "const": "update" },
-          "dataset": {
-            "type": "object",
-            "title": "Jeu de donnée existant",
-            "x-fromUrl": "{context.dataFairUrl}/api/v1/datasets?q={q}&select=id,title&{context.ownerFilter}",
-            "x-itemsProp": "results",
-            "x-itemTitle": "title",
-            "x-itemKey": "id",
-            "properties": {
-              "id": {"type": "string", "title": "Identifiant"},
-              "title": {"type": "string", "title": "Titre"}
-            }
-          }, 
-          "forceUpdate": {
-              "title": "Forcer la mise à jour",
-              "description": "La mise à jour forcée permet de remettre à jour le schéma en cas de modification sur le jeu de donnée",
-              "type": "boolean",
-              "default": false
-          }
-        }
-      }]
+      }
     }, {
-        "title": "Paramètres",
-        "properties": {
-            "filter":{
-                "type": "string",
-                "title": "Département à utiliser",
-                "description": "Le département doit être au format 2 chiffres (ex: 56, 01) ou 3 chiffres pour les DROM-COM (ex: 974)"
-            },
-            "year":{
-                "type": "string",
-                "title": "Année(s) à traiter (2006-2019)",
-                "description": "L'année doit être au format 4 chiffres (ex: 2019) si plusieurs années, séparez les par un '-' (ex: 2018-2029), si aucune année n'est précisée, toutes les années disponibles seront traitées"
-            },
-            "apiAccessToken": {
-              "type": "string",
-              "title": "Jeton d'accès aux API de l'Insee ",
-              "description": "Le jeton d'accès aux API de l'Insee est disponible sur votre espace, pour ce traitement il faudra créer un nouveau jeton avec une durée plus longue (environ 1 mois dans le cas d'un traitement pour toutes les années)",
-              "x-display": "password"
-            },
-              "clearFiles": {
-                "title": "supprimer les fichiers téléchargés",
-                "type": "boolean",
-                "default": true
-              }
+      "title": "Mettre à jour un jeu de données (fichier)",
+      "required": ["dataset"],
+      "properties": {
+        "datasetMode": { "type": "string", "const": "update" },
+        "dataset": {
+          "type": "object",
+          "title": "Jeu de donnée existant",
+          "x-fromUrl": "{context.dataFairUrl}/api/v1/datasets?q={q}&select=id,title&{context.ownerFilter}",
+          "x-itemsProp": "results",
+          "x-itemTitle": "title",
+          "x-itemKey": "id",
+          "properties": {
+          "id": {"type": "string", "title": "Identifiant"},
+          "title": {"type": "string", "title": "Titre"}
           }
+        }, 
+        "forceUpdate": {
+            "title": "Forcer la mise à jour",
+            "description": "La mise à jour forcée permet de remettre à jour le schéma en cas de modification sur le jeu de donnée",
+            "type": "boolean",
+            "default": false
+        }
+      }
     }]
+  },
+  {
+    "title": "Paramètres",
+    "properties": {
+      "filter": {
+        "type": "object",
+        "title": "Filtre de localisation",
+        "properties": {
+          "codeType": {
+            "type": "string",
+            "title": "Type de code",
+            "oneOf": [
+              {
+                "const": "all",
+                "title": "France + DROM-COM (Laisser vide le code)"
+              },
+              {
+                "const": "code_departement",
+                "title": "Code département (Format: 2 chiffres ex: 75) drom-com inclu, hors Mayotte"
+              },
+              {
+                "const": "code_epci",
+                "title": "Code EPCI (format: 9 chiffres ex: 200069042)"
+              }
+            ]
+          },
+          "code": {
+            "type": "string",
+            "title": "Code",
+            "description": "Laisser vide pour récupérer toutes les données"
+          }
+        }
+      },
+      "years":{
+        "type": "string",
+        "title": "Année(s) à traiter (2006-2019)",
+        "description": "L'année doit être au format 4 chiffres (ex: 2019) si plusieurs années, séparez les par un '-' (ex: 2018-2029), si aucune année n'est précisée, toutes les années disponibles seront traitées"      },
+      "clearFiles": {
+        "title": "Supprimer les fichiers temporaires",
+        "type": "boolean",
+        "default": true
+      }
+    }
+  }]
 }

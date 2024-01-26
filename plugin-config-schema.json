@@ -1,4 +1,11 @@
 {
     "type": "object",
-    "properties": {}
+    "properties": {
+      "apiAccessToken": {
+        "type": "string",
+        "title": "Jeton d'accès aux API de l'Insee ",
+        "description": "Le jeton d'accès aux API de l'Insee est disponible sur votre espace, pour ce traitement il faudra créer un nouveau jeton avec une durée plus longue (environ 1 mois dans le cas d'un traitement pour toutes les années)",
+        "x-display": "password"
+      }
+    }
   }
