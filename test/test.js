@@ -33,10 +33,9 @@ describe('test', function () {
       processingConfig: {
         datasetMode: 'update',
         dataset: { title: 'Recensement Test', id: 're7rgz7bg-s9y5pqu12jself' },
-        filter: {
-          codeType: 'code_departement',
-          code: '974'
-        },
+        codeType: 'code_departement',
+        code: '974',
+        years: '2006-2008',
         clearFile: false
       },
       tmpDir: 'data'

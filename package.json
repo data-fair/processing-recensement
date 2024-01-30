@@ -29,13 +29,5 @@
     "standard": "^17.0.0"
   },
   "dependencies": {
-    "csv": "^6.3.6",
-    "csv-writer": "^1.6.0",
-    "form-data": "^4.0.0",
-    "fs-extra": "^11.1.1",
-    "path": "^0.12.7",
-    "pump": "^3.0.0",
-    "stream": "^0.0.2",
-    "util": "^0.12.5"
   }
 }
