@@ -15,10 +15,8 @@ describe('test', function () {
     //   processingConfig: {
     //     datasetMode: 'create',
     //     dataset: { title: 'Recensement Test' },
-    //     filter: {
-    //       codeType: 'code_departement',
-    //       code: '973'
-    //     },
+    //     codeType: 'code_departement',
+    //     code: '973',
     //     years: '2006',
     //     clearFile: true
     //   },
@@ -32,7 +30,7 @@ describe('test', function () {
       },
       processingConfig: {
         datasetMode: 'update',
-        dataset: { title: 'Recensement Test', id: 're7rgz7bg-s9y5pqu12jself' },
+        dataset: { title: 'Recensement Test', id: 'xk6bmhg847-pf9hgcmtyk3ri' },
         codeType: 'code_departement',
         code: '974',
         years: '2006-2008',
