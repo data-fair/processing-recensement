@@ -74,6 +74,9 @@
     {
       "title": "Paramètres",
       "required": ["codeType"],
+      "default": {
+        "codeType": "all"
+      },
       "oneOf": [
         {
           "title": "France + DROM-COM",
@@ -122,9 +125,12 @@
       ],
       "properties": {
         "years": {
-          "type": "string",
-          "title": "Année(s) à traiter (2006-2019)",
-          "description": "L'année doit être au format 4 chiffres (ex: 2019) si plusieurs années, séparez les par un '-' (ex: 2018-2029), si aucune année n'est précisée, toutes les années disponibles seront traitées"
+          "type": "array",
+          "title": "Années",
+          "description": "Années à extraire, laisser vide pour extraire toutes les années",
+          "items": {
+            "type": "integer"
+          }
         }
       }
     }
