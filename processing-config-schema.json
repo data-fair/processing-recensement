@@ -27,14 +27,14 @@
               "properties": {
                 "title": {
                   "type": "string",
-                  "title": "Titre (laissez vide pour utiliser le nom de fichier téléchargé)"
+                  "title": "Titre"
                 }
               }
             }
           }
         },
         {
-          "title": "Mettre à jour un jeu de données (fichier)",
+          "title": "Mettre à jour un jeu de données",
           "required": [
             "dataset"
           ],
