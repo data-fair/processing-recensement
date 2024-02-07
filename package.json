@@ -1,6 +1,6 @@
 {
   "name": "@data-fair/processing-recensement",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Load french census database into a data-fair dataset.",
   "main": "index.js",
   "directories": {
